@@ -70,3 +70,12 @@ Para a evolução deste projeto, o workflow escolhido foi o **GitHub Flow**.
 -   **Resposta de Sucesso**:
     -   **Código**: `201 Created`
     -   **Conteúdo**: O objeto da carta que acabou de ser criada, incluindo seu novo `id`.
+
+### Remover uma carta
+
+-   **Método**: `DELETE`
+-   **Endpoint**: `/api/cartas/:id`
+-   **Resposta de Sucesso**:
+    -   **Código**: `204 No Content`
+-   **Resposta de Erro (Carta não encontrada)**:
+    -   **Código**: `404 Not Found`
