@@ -1,11 +1,9 @@
-# Dependências
 node_modules/
+coverage/
 
-# Logs
 logs
 *.log
 npm-debug.log*
 
-# Arquivos de ambiente
 .env
 .env.local
