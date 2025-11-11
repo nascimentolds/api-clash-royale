@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 
 app.use(express.json());
 
@@ -62,6 +61,18 @@ app.post('/api/cartas', (req, res) => {
   cartas.push(novaCarta);
 
   res.status(201).json(novaCarta);
+});
+
+app.delete('/api/cartas/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const cartaIndex = cartas.findIndex(c => c.id === id);
+
+  if (cartaIndex === -1) {
+    return res.status(404).json({ mensagem: "Carta não encontrada." });
+  }
+
+  cartas.splice(cartaIndex, 1);
+  return res.status(204).send();
 });
 
 module.exports = app;
