@@ -1,3 +1,5 @@
+![Docker Image Size](https://img.shields.io/docker/image-size/nascimentolds/api-clash-royale?sort=date)
+
 # API de Cartas - Clash Royale
 
 Uma API REST simples para listar e gerenciar cartas do universo Clash Royale.
