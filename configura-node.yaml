@@ -1,0 +1,32 @@
+---
+- name: Configurar Servidor e Rodar API Clash Royale
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Baixar script de instalação do Docker
+      get_url:
+        url: https://get.docker.com
+        dest: /tmp/install-docker.sh
+        mode: '0755'
+
+    - name: Executar instalação do Docker
+      command: sh /tmp/install-docker.sh
+      args:
+        creates: /usr/bin/docker
+
+    - name: Iniciar serviço do Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Rodar container da API
+      docker_container:
+        name: api-clash-royale
+        image: nascimentolds/api-clash-royale:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "3000:3000"
+        pull: yes
