@@ -1,4 +1,5 @@
 ![Docker Image Size](https://img.shields.io/docker/image-size/nascimentolds/api-clash-royale?sort=date)
+**Link para o Docker Hub:** [https://hub.docker.com/r/nascimentolds/api-clash-royale](https://hub.docker.com/r/nascimentolds/api-clash-royale)
 
 # API de Cartas - Clash Royale
 
